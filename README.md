@@ -19,9 +19,9 @@ Usage
 The following JavaScript code will fetch the data and 
 replace the values in the template with the contents of the post.
 
-```
+```js
 // Ajax news items
-// @param template is a &lt;script&gt; type "text/template"
+// @param template is a script type "text/template"
 // @param paginator is a DOM element that contains the pagination indicators
 // @param target is a DOM element to populate
 // @param page is the page number
@@ -70,10 +70,10 @@ function loadNewsAjax(template, zone, paginator, target, page, posts, category, 
 					// Build date
 					d = new Date(post.post_date.replace(" ","T")); //Fix for Firefox
 					day = d.getDate()
-					suffix = (day%10 == 1 && (day&lt;10 || day &gt; 20) )? "st":(day%10 == 2 && day!=12)?"nd":(day == 3 && day!=23)?"rd":"th";
+					suffix = (day%10 == 1 && (day<10 || day > 20) )? "st":(day%10 == 2 && day!=12)?"nd":(day == 3 && day!=23)?"rd":"th";
 					month=monthNames[d.getMonth()]
 
-					templateHTML=templateHTML.replace(/{%comments%}/g,	"&lt;a href=\""+post.comments_link+"\" title=\"Comment on "+post.post_title+"\"&gt;"+post.comment_count+" "+comment_text+"&lt;/a&gt;");
+					templateHTML=templateHTML.replace(/{%comments%}/g,	"<a href=\""+post.comments_link+"\" title=\"Comment on "+post.post_title+"\">"+post.comment_count+" "+comment_text+"</a>");
 
 
 					templateHTML=templateHTML.replace(/{%date%}/g,	month+" "+d.getDate()+suffix+", "+d.getFullYear());
