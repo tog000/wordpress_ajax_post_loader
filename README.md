@@ -19,7 +19,7 @@ Usage
 The following JavaScript code will fetch the data and 
 replace the values in the template with the contents of the post.
 
-`
+<code>
 // Ajax news items
 // @param template is a <script> type "text/template"
 // @param paginator is a DOM element that contains the pagination indicators
@@ -95,5 +95,5 @@ function loadNewsAjax(template, zone, paginator, target, page, posts, category, 
 			jQuery(paginator).find(".spinner").fadeOut()
 
 		},"json");
-} 
-`
+}
+</code>
