@@ -19,6 +19,8 @@ Usage
 The following JavaScript code will fetch the data and 
 replace the values in the template with the contents of the post.
 
+### JavaScript
+
 ```js
 // Ajax news items
 // @param template is a script type "text/template"
@@ -97,3 +99,41 @@ function loadNewsAjax(template, zone, paginator, target, page, posts, category, 
 		},"json");
 }
 ```
+
+### Template
+```js
+<script type="text/template" id="weekly-feed-template">
+		<div class="portfolio-item">
+		  <div class="image">
+		    <div class="badge-{%news_kind%}"></div><div class="post-insta"></div>
+		    <a href="{%permalink%}">
+		      <img src="{%thumbnail%}" class="attachment-portfolio-one wp-post-image" alt="{%thumbnail_alt%}">
+		    </a>
+		    <div class="image-none"> <!--IFT image-extras was here!-->
+		      <div class="image-extras-content">
+		        <h3>
+		        </h3>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="portfolio-content">
+		    <h2><a href="{%permalink%}">
+		      {%title%}
+		      </a></h2><h4></h4>
+		    <a style="color:#2D3A03 !important" href="{%permalink%}">{%excerpt%}</a>
+		  </div>
+		  <br clear="all" />
+		  <div class="meta-info">
+		    <div class="alignleft">
+		      {%date%}
+		      <span class="sep">|</span>
+		      {%categories%}
+		      <span class="sep">|</span>
+		      {%comments%}
+		    </div>
+		    <div class="alignright"> <a href="{%permalink%}" class="read-more">Read More</a> </div>
+		  </div>
+		</div>
+	</script>
+```
+
